@@ -1,0 +1,86 @@
+body{
+    background: #272727;
+    display: grid;
+    place-items: center;
+    height: fit-content;
+    font-family: system-ui;
+    overflow-x: hidden; /* Evita a rolagem horizontal  */
+    overflow-y: hidden; /* Remove a barra de rolagem vertical  */
+    background: url('fundo-n.png') no-repeat center center fixed;
+    background-size: 100%;
+    color: white;
+    background-repeat: repeat; /* Faz a imagem cobrir todo o fundo */
+}
+section {
+    flex-wrap: nowrap; /* Evita quebra de linha */
+    font-family: system-ui;
+    display: flex; /* Ativa o flexbox */
+    flex-direction: row; /* Alinha elementos em linha horizontal */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    color: white;
+    background: #2d2d2d;
+    border-radius: 10px;
+    padding: 20px;
+    width: 50%;
+    height: 130%;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgba(6, 6, 22, 0.384);
+}
+
+div {
+    flex-wrap: nowrap; /* Evita quebra de linha */
+    font-family: system-ui;
+    display: flex;
+    flex-direction: row; /* Deixa o conteúdo horizontal */
+    align-items: center; /* Centraliza o texto verticalmente */
+    justify-content: center;
+    width: 100%;
+    margin: 0 10px;
+}
+
+input {
+    font-family: system-ui;
+    text-align: center;
+    width: 300px; /* Define largura padrão */
+    margin-right: 10px;
+    text-align: center;
+    place-items: center;
+    color: white;
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #282828;
+    border: 1px solid #131313;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+button {
+    font-family: system-ui;
+    background-color: #545454;
+    border: none;
+    color: #ffffff;
+    border-radius: 5px;
+    height: 40px; /* Tamanho uniforme */
+    width: 80px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #1d1d1d;
+    color: white;
+}
+label {
+    flex-wrap: nowrap; /* Evita quebra de linha */
+}
+footer{
+    display: inline flex; /* Ativa o layout flexível */
+    justify-content: space-between; /* Espaço máximo entre os itens */
+    align-content: center;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 10px; /* Espaçamento interno */
+    color: #ffffff;
+    
+    font-style: italic;
+}
