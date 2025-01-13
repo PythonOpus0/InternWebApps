@@ -2,14 +2,17 @@ body {
     background: #272727;
     display: flex; /* Ativa o layout flexível */
     flex-direction: column; /* Coloca os elementos em uma coluna */
-    min-height: 100vh; /* Garante que a página ocupe pelo menos a altura da tela */
+    height: 125vh;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden; /* Evita a rolagem horizontal */
     color: white;
     background: url('fundo-n.png') no-repeat center center fixed;
     background-size: cover; /* Faz a imagem cobrir todo o fundo */
 }
-
+.separador {
+    height: 20vh;
+}
 header {
     padding: 20px;
     text-align: center;
@@ -20,9 +23,9 @@ header {
 section {
     flex: 1; /* Faz a seção principal ocupar o espaço restante */
     display: flex; /* Ativa o flexbox */
-    flex-direction: row; /* Alinha elementos em linha horizontal */
     align-items: center; /* Centraliza verticalmente */
     justify-content: center; /* Centraliza horizontalmente */
+
     color: white;
     background: rgba(255, 255, 255, 0.25);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -32,12 +35,16 @@ section {
     padding: 20px;
     width: 50%;
     margin: auto;
-
+}
+.use {
+    display: inline; 
+    white-space: nowrap; 
+}
 footer {
     background-color: #002d62; /* Cor do fundo */
     color: #ffffff; /* Cor do texto */
-    font-style: italic;
-    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    padding: 50px;
     display: flex;
     justify-content: space-between; /* Espaçamento entre os itens */
     align-items: center; /* Alinhamento central vertical */
