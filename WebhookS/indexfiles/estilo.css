@@ -10,7 +10,9 @@ html::-webkit-scrollbar {
 body {
     background: #272727;
     display: flex; /* Ativa o layout flexível */
-    flex-direction: column; /* Coloca os elementos em uma coluna */
+    flex-direction: column;
+    align-items: start; /* Centraliza verticalmente */
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
     height: 125vh;
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -34,9 +36,9 @@ header {
 }
 
 section {
-    flex: 1; /* Faz a seção principal ocupar o espaço restante */
-    display: flex; /* Ativa o flexbox */
-    align-items: center; /* Centraliza verticalmente */
+    /* Faz a seção principal ocupar o espaço restante */
+    display: start;
+    align-items: start; /* Centraliza verticalmente */
     justify-content: flex-start; /* Alinha o conteúdo à esquerda */
     color: white;
     padding: 20px;
