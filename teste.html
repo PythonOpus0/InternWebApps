@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow-y: scroll; /* Permite a rolagem vertical */
+            scrollbar-width: none; /* Remove a barra de rolagem no Firefox */
+            -ms-overflow-style: none; /* Remove a barra de rolagem no IE e Edge */
+        }
+
+        body::-webkit-scrollbar {
+            width: 0; /* Garante que a barra de rolagem não seja renderizada */
+            display: none; /* Adicionalmente remove no WebKit */
+        }
+    </style>
+    <title>Body Scrollbar Hidden</title>
+</head>
+<body>
+    <div>
+        <h1>Conteúdo Longo</h1>
+        <p>Este é um exemplo de como esconder a barra de rolagem do body enquanto permite a rolagem.</p>
+        <p>Role para ver mais conteúdo...</p>
+        <p style="margin-bottom: 1000px;">Fim do conteúdo.</p>
+    </div>
+</body>
+</html>
