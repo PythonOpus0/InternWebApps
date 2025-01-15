@@ -62,11 +62,15 @@ footer {
     text-align: center;
     width: 250px;
     cursor: pointer;
+    
   }
 .btn-three {
-    color: #FFF;
+    color: white;
     transition: all 0.5s;
     position: relative;
+  }
+.btn-three:hover {
+      color: white; /* Cor branca ao passar o mouse */
   }
   .btn-three::before {
     content: '';
@@ -76,7 +80,7 @@ footer {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.452);
     transition: all 0.3s;
   }
   .btn-three:hover::before {
@@ -93,7 +97,7 @@ footer {
     z-index: 1;
     opacity: 0;
     transition: all 0.3s;
-    border: 1px solid rgba(255,255,255,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.822);
     transform: scale(1.2,1.2);
   }
   .btn-three:hover::after {
