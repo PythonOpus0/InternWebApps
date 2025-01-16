@@ -1,30 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moldura na Página Inteira</title>
     <style>
         body {
-            margin: 0;
-            height: 100vh;
-            overflow-y: scroll; /* Permite a rolagem vertical */
-            scrollbar-width: none; /* Remove a barra de rolagem no Firefox */
-            -ms-overflow-style: none; /* Remove a barra de rolagem no IE e Edge */
-        }
-
-        body::-webkit-scrollbar {
-            width: 0; /* Garante que a barra de rolagem não seja renderizada */
-            display: none; /* Adicionalmente remove no WebKit */
+            margin: 0; /* Remove margens padrão */
+            padding: 0; /* Remove espaçamentos padrão */
+            border: 5px solid black; /* Define a moldura */
+            height: 100vh; /* Garante que a altura seja a da janela */
+            box-sizing: border-box; /* Inclui a borda no cálculo do tamanho */
         }
     </style>
-    <title>Body Scrollbar Hidden</title>
 </head>
 <body>
-    <div>
-        <h1>Conteúdo Longo</h1>
-        <p>Este é um exemplo de como esconder a barra de rolagem do body enquanto permite a rolagem.</p>
-        <p>Role para ver mais conteúdo...</p>
-        <p style="margin-bottom: 1000px;">Fim do conteúdo.</p>
-    </div>
+    <h1>Minha Página com Moldura</h1>
+    <p>O conteúdo da página está dentro de uma moldura que cobre toda a tela.</p>
 </body>
 </html>
