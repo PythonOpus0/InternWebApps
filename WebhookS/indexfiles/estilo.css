@@ -1,5 +1,3 @@
-@import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
-
 html {
     overflow: auto; /* Permite rolar */
     scrollbar-width: none; /* Para Firefox */
@@ -62,12 +60,13 @@ footer {
     text-align: center;
     width: 250px;
     cursor: pointer;
-    
+    border-radius: 10px;
   }
 .btn-three {
     color: white;
     transition: all 0.5s;
     position: relative;
+    border-radius: 10px;
   }
 .btn-three:hover {
       color: white; /* Cor branca ao passar o mouse */
@@ -82,6 +81,7 @@ footer {
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.452);
     transition: all 0.3s;
+    border-radius: 10px;
   }
   .btn-three:hover::before {
     opacity: 0 ;
@@ -99,6 +99,7 @@ footer {
     transition: all 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.822);
     transform: scale(1.2,1.2);
+    border-radius: 10px;
   }
   .btn-three:hover::after {
     opacity: 1;

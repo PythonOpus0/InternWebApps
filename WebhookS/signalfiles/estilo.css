@@ -37,9 +37,109 @@ section {
     margin: auto;
 }
 .use {
-    display: inline; 
-    white-space: nowrap; 
+  display: flex; /* Define layout flexível */
+  white-space: nowrap; /* Evita quebra de linha */
+  align-items: center; /* Alinha os itens verticalmente no centro */
 }
+.form {
+  --width-of-input: 200px;
+  --border-height: 1px;
+  --border-before-color: rgba(221, 221, 221, 0.39);
+  --border-after-color: #ffffff;
+  --input-hovered-color: #e9e9e91f;
+  position: relative;
+  width: var(--width-of-input);
+ }
+ /* styling of Input */
+ .input {
+  color: #ffffff;
+  font-size: 0.9rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.5em;
+  padding-block: 0.7em;
+  border: none;
+  border-bottom: var(--border-height) solid var(--border-before-color);
+ }
+ /* styling of animated border */
+ .input-border {
+  position: absolute;
+  background: var(--border-after-color);
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+ }
+ /* Hover on Input */
+ input:hover {
+  background: var(--input-hovered-color);
+ }
+ .input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Placeholder branco com opacidade */
+  }
+ 
+ input:focus {
+  outline: none;
+ }
+ /* here is code of animated border */
+ input:focus ~ .input-border {
+  width: 100%;
+ }
+ 
+.btn {
+    line-height: 35px;
+    height: 36px;
+    text-align: center;
+    width: 100px;
+    cursor: pointer;
+    
+  }
+.btn-three {
+    color: white;
+    transition: all 0.5s;
+    position: relative;
+    
+  }
+.btn-three:hover {
+      color: white; /* Cor branca ao passar o mouse */
+  }
+  .btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.452);
+    transition: all 0.3s;
+    
+  }
+  .btn-three:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+  }
+  .btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.822);
+    transform: scale(1.2,1.2);
+    
+  }
+  .btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+  }
+
 footer {
     background-color: #002d62; /* Cor do fundo */
     color: #ffffff; /* Cor do texto */
@@ -49,3 +149,4 @@ footer {
     justify-content: space-between; /* Espaçamento entre os itens */
     align-items: center; /* Alinhamento central vertical */
 }
+
