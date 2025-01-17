@@ -9,20 +9,16 @@ html::-webkit-scrollbar {
     display: none; /* Para Chrome, Safari e Edge */
 }
 body {
-    background: #272727;
-    display: flex; /* Ativa o layout flexível */
-    flex-direction: column;
-    align-items: start; 
-    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
-    height: 125vh;
-    margin: 0;
-    overflow-x: hidden; 
-    overflow-y: scroll; 
-    scrollbar-width: none; /* Para Firefox */
-    -ms-overflow-style: none; /* Para Internet Explorer 10+ */
-    color: white;
-    background: url('fundo-n.png') no-repeat center center fixed;
-    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+  background: #272727;
+  display: flex; /* Ativa o layout flexível */
+  flex-direction: column; /* Coloca os elementos em uma coluna */
+  height: 125vh;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden; /* Evita a rolagem horizontal */
+  color: white;
+  background: url('fundo-n.png') no-repeat center center fixed;
+  background-size: cover; /* Faz a imagem cobrir todo o fundo */
 }
 .separador {
     height: 20vh;
@@ -40,18 +36,27 @@ header {
 }
 
 .use {
-    display: inline; 
-    white-space: nowrap; 
+  display: flex; /* Define layout flexível */
+  white-space: nowrap; /* Evita quebra de linha */
+  align-items: center; /* Alinha os itens verticalmente no centro */
 }
 
 .rodape {
   background-color: #002d62; /* Cor do fundo */
   color: #ffffff; /* Cor do texto */
   font-family: 'Roboto', sans-serif;
-  padding: 14px;
+  padding: 1px;
   display: flex;
+  flex-wrap: wrap; /* Permite quebra de linha se necessário */
   justify-content: space-between; /* Espaçamento entre os itens */
-  align-items: center; /* Alinhamento central vertical */
+  align-items: center; /* Alinhamento vertical */
+  width: 100%; /* Garante que ocupe toda a largura */
+  box-sizing: border-box; /* Inclui padding na largura */
+}
+.rodape div {
+  text-align: center; /* Centraliza o conteúdo dentro de cada div */
+  margin: 5px; /* Espaçamento entre os elementos */
+  padding: 1vh;
 }
 .btn {
     line-height: 50px;
