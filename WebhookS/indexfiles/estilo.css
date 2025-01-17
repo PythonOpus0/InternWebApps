@@ -48,10 +48,11 @@ header {
   background-color: #002d62; /* Cor do fundo */
   color: #ffffff; /* Cor do texto */
   font-family: 'Roboto', sans-serif;
-  padding: 14px;
+  padding: 10px;
   display: flex;
   justify-content: space-between; /* Espaçamento entre os itens */
   align-items: center; /* Alinhamento central vertical */
+  width: 100%;
 }
 .btn {
     line-height: 50px;
