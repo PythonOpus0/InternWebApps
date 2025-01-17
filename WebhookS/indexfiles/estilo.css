@@ -44,15 +44,14 @@ header {
     white-space: nowrap; 
 }
 
-footer {
-    background-color: #002d62; /* Cor do fundo */
-    color: #ffffff; /* Cor do texto */
-    font-family: 'Roboto', sans-serif;
-    padding: 50px;
-    display: flex;
-    justify-content: space-between; /* Espaçamento entre os itens */
-    width: 95%;
-    align-items: center; /* Alinhamento central vertical */
+.rodape {
+  background-color: #002d62; /* Cor do fundo */
+  color: #ffffff; /* Cor do texto */
+  font-family: 'Roboto', sans-serif;
+  padding: 14px;
+  display: flex;
+  justify-content: space-between; /* Espaçamento entre os itens */
+  align-items: center; /* Alinhamento central vertical */
 }
 .btn {
     line-height: 50px;

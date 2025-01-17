@@ -32,13 +32,13 @@ body {
 }
 
 .separador {
-    height: 20vh;
+    height: 25vh;
 }
 header {
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     color: white;
-    font-size: 24px;
+    font-size: 4vh;
 }
 
 section {
@@ -63,7 +63,7 @@ section {
   align-items: center; /* Alinha os itens verticalmente no centro */
 }
 .form {
-  --width-of-input: 200px;
+  --width-of-input: 40vh;
   --border-height: 1px;
   --border-before-color: rgba(221, 221, 221, 0.39);
   --border-after-color: #ffffff;
@@ -161,11 +161,11 @@ section {
     transform: scale(1,1);
   }
 
-footer {
+.rodape {
     background-color: #002d62; /* Cor do fundo */
     color: #ffffff; /* Cor do texto */
     font-family: 'Roboto', sans-serif;
-    padding: 50px;
+    padding: 14px;
     display: flex;
     justify-content: space-between; /* Espaçamento entre os itens */
     align-items: center; /* Alinhamento central vertical */

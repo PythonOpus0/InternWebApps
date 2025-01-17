@@ -14,13 +14,13 @@ function enviarSolicitacao(numeroSerie) {
     })
     .then(response => {
         if (response.ok) {
-            alert(`Sinal enviado com sucesso para ${url}: ${numeroSerie}.`);
+            window.location.href = "restart.html";
         } else {
-            alert(`Erro ao enviar sinal para ${url}: ${numeroSerie}. Status code: ${response.status}`);
+            alert("Erro ao enviar sinal.");
         }
     })
     .catch(error => {
-        alert(`Erro de Conexão: Não foi possível conectar ao servidor ${url}. Erro: ${error}`);
+        alert(`Erro de Conexão. Erro: ${error}`);
     });
 }
 
