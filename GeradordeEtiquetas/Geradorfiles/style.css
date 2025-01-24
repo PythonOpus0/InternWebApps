@@ -126,6 +126,11 @@ th {
     white-space: nowrap; /* Evita quebra de linha */
     align-items: center; /* Alinha os itens verticalmente no centro */
   }
+  .bu {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha se necessário */
+  }
+
   .form {
     --width-of-input: 40vh;
     --border-height: 1px;
@@ -180,6 +185,7 @@ th {
       width: 100px;
       cursor: pointer;
       border-radius: 8px;
+      margin: 2px;
     }
   .btn-three {
       color: white;
