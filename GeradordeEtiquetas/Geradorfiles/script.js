@@ -4,6 +4,7 @@ const ETIncli = document.getElementById("nomeCliente")
 const ETIcnpj = document.getElementById("CNPJJ")
 const ETIquant = document.getElementById("quant")
 const ETIcode = document.getElementById("codigo")
+const ETIvol = document.getElementById("inputVol")
 
 function enviarSolicitacao(numNF) {
     const url = "https://192.168.88.72:5000/NotaFiscal";
@@ -44,6 +45,9 @@ function enviarSolicitacao(numNF) {
         console.error("Erro:", error);
     });
 }
+function volumeMudar(volumes) {
+    ETIvol.innerHTML = volumes
+}
 
 document.getElementById('enviarButton').addEventListener('click', () => {
     const numNF = document.getElementById('valorInput').value;
@@ -52,5 +56,15 @@ document.getElementById('enviarButton').addEventListener('click', () => {
         enviarSolicitacao(numNF);
     } else {
         alert("Por favor, insira um número da nota.");
+    }
+});
+
+document.getElementById('buttonVol').addEventListener('click', () => {
+    const volumes = document.getElementById('Inputtoo').value;
+
+    if (volumes) {
+        volumeMudar(volumes);
+    } else {
+        alert("Por favor, insira um valor em volumes.");
     }
 });
