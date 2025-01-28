@@ -71,6 +71,36 @@ function consultarEstoque() {
         });
 }
 
+
+
+function verificarCampos() {
+    const input = document.getElementById("itemSearch").value;
+    const solicitante = document.getElementById("Solicitante").value;
+    const motivoOS = document.getElementById("MotivoOS").value;
+    const quantidadeNum = document.getElementById("quantNum").value;
+    const data = document.getElementById("Data").value;
+    const saldoDisplay = document.getElementById("saldoDisplay").innerText;
+    const sendButton = document.getElementById("sendButton")
+    const outsection = document.getElementById("outsection");
+    // Se todos os campos estão preenchidos e o saldo é válido
+    if (input && solicitante && motivoOS && quantidadeNum && data && saldoDisplay.includes(Number)) {
+        // Adiciona evento de clique no botão "Enviar"
+        sendButton.addEventListener("click", () => {
+            const ht_mail = `
+                <p><b>Item selecionado:</b> ${input}</p>
+                <p><b>Saldo:</b> ${saldoDisplay.split(": ")[1]}</p>
+                <p><b>Quantidade:</b> ${quantidadeNum}</p>
+                <p><b>Solicitante:</b> ${solicitante}</p>
+                <p><b>Motivo ou OS:</b> ${motivoOS}</p>
+                <p><b>Data:</b> ${data}</p>
+            `;
+            enviarDados(ht_mail);
+        });
+    } else {
+        console.log("Erro na identificação.")
+    }
+}
+
 function enviarDados(ht_mail) {
     const url = 'https://192.168.88.72:5000/sendmail'; // Endpoint para envio
 
@@ -87,24 +117,12 @@ function enviarDados(ht_mail) {
             }
             return response.json();
         })
-        .then(data => {
-            document.body.innerHTML = 'Solicitação Enviada.';
-            const F5_Button = document.createElement("button");
-            F5_Button.id = "sendButton";
-            F5_Button.textContent = "↺";
-            console.log("Resposta do servidor:", data);
-            document.body.appendChild(F5_Button);
-            F5_Button.style.position = "absolute";
-            F5_Button.style.top = "50%";
-            F5_Button.style.left = "50%";
-            F5_Button.style.transform = "translate(-50%, -50%)";
-            F5_Button.style.backgroundColor = "#282828";
-            F5_Button.addEventListener("click", () => {
-                window.location.href = "https://requisicao.arcocirurgico.com.br/";
-            });
-        })
-        .catch(error => {
+        (error => {
             console.error('Erro:', error);
             alert("Erro ao enviar os dados.");
         });
 }
+
+document.querySelectorAll("#Solicitante, #MotivoOS, #quantNum, #Data").forEach(field => {
+    field.addEventListener("input", verificarCampos);
+});
