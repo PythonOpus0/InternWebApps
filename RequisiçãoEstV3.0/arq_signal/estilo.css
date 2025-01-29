@@ -141,6 +141,15 @@ section {
 #itemSearch {
   width: 95vh;
 }
+#Data {
+  width: 20vh; /* Ajuste conforme necessário */
+  display: block;
+  margin-left: 45vh;
+  margin-right: 80vh;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
 
 .use {
   display: flex; /* Ativar flexbox */
@@ -154,6 +163,35 @@ section {
   align-items: center;
   gap: 10px; /* Espaço entre input e botão */
   width: 100%;
+}
+
+.res {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  height: 100px;
+}
+
+.loader {
+  display: block;
+  margin-left: 48.5vh;
+  margin-right: 50vh;
+  display: flex; 
+  height: 9px;
+  width: 60px;
+  --c:no-repeat linear-gradient(#ffffff 0 0);
+  background: var(--c), var(--c), var(--c), var(--c);
+  background-size: 26% 3px;
+  animation: l2 1s infinite;
+}
+@keyframes l2 {
+  0%,
+  70%,
+  100% {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 100%,calc(2*100%/3) 100%,calc(3*100%/3) 100%}
+  14%  {background-position: calc(0*100%/3) 0   ,calc(1*100%/3) 100%,calc(2*100%/3) 100%,calc(3*100%/3) 100%}
+  28%  {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 0   ,calc(2*100%/3) 100%,calc(3*100%/3) 100%}
+  42%  {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 100%,calc(2*100%/3) 0   ,calc(3*100%/3) 100%}
+  56%  {background-position: calc(0*100%/3) 100%,calc(1*100%/3) 100%,calc(2*100%/3) 100%,calc(3*100%/3) 0   }
 }
 .btn {
     line-height: 38px;

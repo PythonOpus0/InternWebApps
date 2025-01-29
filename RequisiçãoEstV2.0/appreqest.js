@@ -101,19 +101,7 @@ function enviarDados(ht_mail) {
             return response.json();
         })
         .then(() => {
-            document.body.innerHTML = '<h2>Solicitação Enviada.</h2>';
-            const F5_Button = document.createElement("button");
-            F5_Button.id = "sendButton";
-            F5_Button.textContent = "↺";
-            F5_Button.style.cssText = `
-                position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                background-color: #282828; color: #fff; padding: 10px 20px;
-                font-size: 18px; border: none; cursor: pointer; border-radius: 8px;
-            `;
-            F5_Button.addEventListener("click", () => {
-                window.location.href = "/";
-            });
-            document.body.appendChild(F5_Button);
+            window.location.href = "/index"
         })
         .catch(error => {
             console.error('Erro:', error);

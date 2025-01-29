@@ -10,7 +10,7 @@ function consultarEstoque() {
             return response.json();
         })
         .then(data => {
-            resultadoDiv.innerHTML = 'Resultado da Consulta:‎‎‎</br>';
+            resultadoDiv.innerHTML = '</br>';
 
             if (data.length > 0) {
                 // Criar container para input e saldo
@@ -74,50 +74,50 @@ function consultarEstoque() {
 
 
 function verificarCampos() {
-    const input = document.getElementById("itemSearch").value;
-    const solicitante = document.getElementById("Solicitante").value;
-    const motivoOS = document.getElementById("MotivoOS").value;
-    const quantidadeNum = document.getElementById("quantNum").value;
-    const data = document.getElementById("Data").value;
-    const saldoDisplay = document.getElementById("saldoDisplay").innerText;
-    const sendButton = document.getElementById("sendButton")
-    const outsection = document.getElementById("outsection");
-    // Se todos os campos estão preenchidos e o saldo é válido
-    if (input && solicitante && motivoOS && quantidadeNum && data && saldoDisplay.includes(Number)) {
-        // Adiciona evento de clique no botão "Enviar"
-        sendButton.addEventListener("click", () => {
+    const input = document.getElementById("itemSearch").value.trim();
+    const solicitante = document.getElementById("Solicitante").value.trim();
+    const motivoOS = document.getElementById("MotivoOS").value.trim();
+    const quantidadeNum = document.getElementById("quantNum").value.trim();
+    const data = document.getElementById("Data").value.trim();
+    const saldoDisplay = document.getElementById("saldoDisplay").innerText.trim();
+    const sendButton = document.getElementById("sendButton");
+
+    // Verifica se saldoDisplay é um número válido
+    const saldoValido = !isNaN(parseFloat(saldoDisplay)) && isFinite(saldoDisplay);
+
+    if (input && solicitante && motivoOS && quantidadeNum && data && saldoValido) {
+        sendButton.onclick = () => {
             const ht_mail = `
                 <p><b>Item selecionado:</b> ${input}</p>
-                <p><b>Saldo:</b> ${saldoDisplay.split(": ")[1]}</p>
+                <p><b>Saldo:</b> ${saldoDisplay}</p>
                 <p><b>Quantidade:</b> ${quantidadeNum}</p>
                 <p><b>Solicitante:</b> ${solicitante}</p>
                 <p><b>Motivo ou OS:</b> ${motivoOS}</p>
                 <p><b>Data:</b> ${data}</p>
             `;
             enviarDados(ht_mail);
-        });
+        };
     } else {
-        console.log("Erro na identificação.")
+        console.log("Erro na identificação. Verifique se todos os campos foram preenchidos corretamente.");
     }
 }
 
 function enviarDados(ht_mail) {
-    const url = 'https://192.168.88.72:5000/sendmail'; // Endpoint para envio
+    const url = 'https://192.168.88.72:5000/sendmail';
 
     fetch(url, {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ht_mail }),
     })
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Erro ao enviar os dados');
-            }
+            if (!response.ok) throw new Error('Erro ao enviar os dados');
             return response.json();
         })
-        (error => {
+        .then(() => {
+            window.location.href = "response.html"
+        })
+        .catch(error => {
             console.error('Erro:', error);
             alert("Erro ao enviar os dados.");
         });
